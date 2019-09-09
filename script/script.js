@@ -1,3 +1,5 @@
+'use strict';
+
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
 
@@ -9,7 +11,7 @@ let year = 1;
 //соотношение орбит и радиусов планет в этой группе 1:1
 
 let sun = {x: 500, y: 500, radius: 50, color: '#f5de5d', img: document.getElementById('sun')};
-let mercury = {x: 557, y: 500, radius: 2.5, color: '#a6a4a2', orbit: 57, img: document.getElementById('mercury')};
+let mercury = {x: 557, y: 500, radius: 3, color: '#a6a4a2', orbit: 57, img: document.getElementById('mercury')};
 let venus = {x: 608, y: 500, radius: 9.5, color: '#e0c396', orbit: 108, img: document.getElementById('venus')};
 let earth = {x: 650, y: 500, radius: 10, color: '#abd4d0',orbit: 150, img: document.getElementById('earth')};
 let mars = {x: 728, y: 500, radius: 5, color: '#873e2e',orbit: 228, img: document.getElementById('mars')};
@@ -191,7 +193,7 @@ let rotateStep = function(grad){
 //увеличение летоисчисления
 
 let yearCount = function(){
-	document.getElementById('timer').innerText = `Year: ${++year}`
+	document.getElementById('timer').innerText = `Year: ${++year}`;
 };
 
 
@@ -208,7 +210,7 @@ let rotate = function(speed){
 		i++;
 
 		//триггер тысячных отсечек
-		if(i%360 === 0){yearCount();};
+		if(i%360 === 0){yearCount();}
 
 		setTimeout(f, speed);
 	}
@@ -220,7 +222,7 @@ let rotate = function(speed){
 
 window.onload = function(){
 	rotateStep(0);
-	rotate(10);
+	rotate(41); // такая частота дает примерно 24 fps
 };
 
 
