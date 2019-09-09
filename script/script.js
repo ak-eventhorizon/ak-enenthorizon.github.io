@@ -1,10 +1,10 @@
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
 
+context.lineWidth = 0.3;
+
 //текущий год (один оборот Земли вокруг солнца)
 let year = 1;
-
-context.lineWidth = 0.3;
 
 //соотношение орбит и радиусов планет в этой группе 1:1
 
