@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fffad3;
+}
+
+.main {
+	max-width: 490px;
+    margin: auto;
+}
+
+/*media query breakpoint - smartphones*/
+@media (max-width: 480px) {
+
+    .main {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.main > a {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    min-width: 200px;
+    max-width: 480px;
+    border-radius: 25px;
+    
+    background-color: #42bde5;
+    box-shadow: 4px 4px 3px grey;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.main a:hover {
+    background-color: #0aa6d7;
+}
+
+.main a:active {
+    box-shadow: 2px 2px 3px grey;
+    transform: translateY(2px);
+}
+
+.main > a > p {
+    display: inline-block;
+    font: 32px bold arial, sans-serif;
+    color: white;
+    line-height: 75px;
+}
+
+
+
