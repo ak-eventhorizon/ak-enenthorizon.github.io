@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#canvas {
+	background-color: #398d39;
+	background-image: url(../img/puh.png), url(../img/hive.png);
+	background-repeat: no-repeat, no-repeat;
+	background-position: bottom right, 20px 0px;
+	background-size: 150px, 100px;
+}
