@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+	<form>
+		Длина пароля: <br>
+		<input type="text" name="passLength" placeholder="4 - 64">
+		<br>
+		Количество паролей: <br>
+		<input type="text" name="passQuantity" placeholder="Целое число">
+		<br>
+		<button type="button" onclick="passwordGenerate(+passLength.value,+passQuantity.value)">Generate</button>
+	</form>
+
+
+	<div id="output"></div>
+
+
+<script src="script/script.js"></script>
+
+</body>
+</html>
