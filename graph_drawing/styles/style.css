@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+	margin: 10px;
+	width: 400px;
+}
+
+#userMathExp{
+	margin: 0 0 10px 6px;
+	width: 300px;
+}
+
+#userScopeBegin, #userScopeEnd, #userStep{
+	margin-left: 19px;
+	width: 81px;
+}
+
+button {
+	margin: 10px 0 0 150px;
+	width: 100px;
+	height: 30px;
+}
+
+canvas {
+	margin: 0 10px 10px 10px;
+	background-color: #ebebeb;
+}
+
+/*стилизация валидирования математического выражения*/
+/*подсвечивает валидацию, когда плейсхолдера уже не видно (т.е. был ввод чего то)*/
+
+#userMathExp:valid:not(:placeholder-shown) {
+	background-color: rgba(0, 128, 0, 0.1);
+}
+
+#userMathExp:invalid:not(:placeholder-shown) {
+	background-color: rgba(255, 0, 0, 0.1);
+}
