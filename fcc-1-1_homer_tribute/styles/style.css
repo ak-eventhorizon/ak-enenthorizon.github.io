@@ -1,0 +1,559 @@
+/* rock-salt-regular - latin */
+@font-face {
+  font-family: 'Rock Salt';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/rock-salt-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Rock Salt Regular'), local('RockSalt-Regular'),
+       url('../fonts/rock-salt-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rock-salt-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rock-salt-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rock-salt-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rock-salt-v10-latin-regular.svg#RockSalt') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-slab-regular - cyrillic_latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-slab-v10-cyrillic_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/roboto-slab-v10-cyrillic_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/roboto-slab-v10-cyrillic_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-slab-v10-cyrillic_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/roboto-slab-v10-cyrillic_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/roboto-slab-v10-cyrillic_latin-regular.svg#RobotoSlab') format('svg'); /* Legacy iOS */
+}
+
+/******************* COLOR SCHEME - BEGIN *******************/
+:root {
+	--homer-white: #ffffff;
+	--homer-black: #000000;
+	--homer-blue: #70d1fe;
+	--homer-yellow: #fed90f;
+	--bart-red: #f14e28;
+	--shadow-grey: #979797;
+}
+/******************* COLOR SCHEME - END *******************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+	width: 100%;
+	margin-bottom: 2em;
+	background-color: var(--homer-blue);
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0px 2px 5px 0px var(--shadow-grey);
+}
+
+header .header-inner {
+	max-width: 1024px;
+	margin: auto;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header h1 {
+	width: calc(100% - 152px);
+	text-align: center;
+	text-shadow: 2px 2px var(--homer-black);
+	font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
+	font-size: 4em;
+	line-height: 116px;
+	color: var(--homer-yellow);
+}
+
+main {
+	width: 100%;
+}
+
+img	{
+	display: block;
+	margin: auto;
+}
+
+.img_start {
+	width: 30%;
+	height: auto;
+}
+
+.img_finish {
+	width: 30%;
+	height: auto;
+}
+
+article {
+	max-width: 1024px;
+	margin: auto;
+	padding: 0 1em 0 1em;
+}
+
+section {
+	margin: 2em 0 2em 0;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
+	font-size: 2em;
+	color: var(--homer-blue);
+	text-shadow: 2px 2px var(--shadow-grey);
+}
+
+h2::before {
+	content: "-";
+}
+
+h2::after {
+	content: "-";
+}
+
+p {
+	text-indent: 1.7em;
+	text-align: justify;
+	font-family: 'Roboto Slab', Times, serif;
+	font-size: 1.7em;
+    line-height: 1.5em;
+}
+
+p:not(:first-of-type) {
+	margin-top: 0.2em;
+}
+
+q {
+	display: block;
+	padding-top: 1em;
+    text-align: right;
+    font-family: 'Roboto Slab', Times, serif;
+    font-size: 1.9em;
+    font-style: italic;
+    line-height: 1em;
+    opacity: 0.5;
+}
+
+footer {
+	width: 100%;
+	height: 85px;
+	background-color: var(--homer-blue);
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0px -2px 5px 0px var(--shadow-grey);
+	position: relative; /*for box-shadow over others elements*/
+}
+
+footer .footer-inner {
+	max-width: 1024px;
+	margin: auto;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer .left-footer	{
+	width: 140px;
+	overflow: hidden;
+}
+
+footer a {
+	display: block;
+	width: calc(100% - 280px);
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 2px 2px var(--homer-black);
+	line-height: 85px;
+	font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
+	font-size: 3em;
+	overflow: hidden;
+	color: var(--homer-yellow);
+	cursor: pointer;
+}
+
+footer .mobile-link {
+	display: none;
+}
+
+footer .right-footer	{
+	width: 140px;
+	overflow: hidden;
+}
+
+footer h3 {
+	text-align: center;
+	text-shadow: 1px 1px var(--homer-black);
+	font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	color: var(--bart-red);
+	transform: rotate(-15deg);
+}
+
+
+
+/* Smartphones ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
+	
+	header h1 {
+		font-size: 1.8em;
+		line-height: normal;
+	}
+
+	.img_start {
+		width: 50%;
+	}
+
+	.img_finish {
+		width: 50%;
+	}
+
+	p {
+		font-size: 1.2em;
+	}
+
+	q{
+		font-size: 1.4em;	
+	}
+
+	footer .left-footer {
+		display: none;
+	}
+
+	footer a {
+		display: none;
+	}
+
+	footer .mobile-link {
+		font-size: 2em;
+		width: calc(100% - 140px);
+		display: block;
+	}
+}
+
+/* Tablets ----------- */
+@media only screen and (min-device-width: 426px) and (max-device-width: 768px) {
+	
+	header h1 {
+		font-size: 3em;
+		line-height: normal;
+	}
+
+	p {
+		font-size: 1.5em;
+	}
+
+	q{
+		font-size: 1.7em;	
+	}
+
+	footer a {
+		font-size: 2.3em;
+	}
+
+	footer .mobile-link {
+		display: none;
+	}
+}
+
+
+
+/******************* HOMER PIC - START *******************/
+
+.homer {
+	width: 142px;
+	height: 161px;
+	margin-right: 10px;
+	background-color: transparent;
+	align-self: flex-end;  /*always put to down*/
+	position: relative;
+}
+
+.head-rect {
+	background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-top: none;
+    border-bottom-color: var(--homer-yellow);
+    width: 112px;
+    height: 87px;
+
+    position: absolute;
+    top: 71px;
+    left: 13px;
+    z-index: 1;
+}
+
+.head-circ {
+	background-color: var(--homer-yellow);
+    border: solid black 3px;
+    width: 112px;
+    height: 100px;
+    border-radius: 42%;
+
+    position: absolute;
+    top: 24px;
+    left: 13px;
+    z-index: 1;
+
+}
+
+.top-hair {
+	background-color: transparent;
+    border: solid black 3px;
+    width: 58px;
+    height: 61px;
+    border-radius: 48%;
+
+    position: absolute;
+    top: 3px;
+    left: 42px;
+    z-index: 0;
+}
+
+.bottom-hair {
+	background-color: transparent;
+    border: solid black 3px;
+    width: 45px;
+    height: 50px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 13px;
+    left: 49px;
+    z-index: 0;
+}
+
+.left-eyebrow {
+	background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-top: none;
+    width: 9px;
+    height: 9px;
+    border-radius: 3px 3px 13px 13px;
+
+    transform: rotate(-278deg);
+    position: absolute;
+    top: 98px;
+    left: 6px;
+    z-index: 2;
+}
+
+.right-eyebrow {
+	background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-top: none;
+    width: 9px;
+    height: 9px;
+    border-radius: 3px 3px 13px 13px;
+
+    transform: rotate(-80deg);
+    position: absolute;
+    top: 97px;
+    left: 123px;
+    z-index: 2;
+}
+
+.left-eye {
+	background-color: var(--homer-white);
+    border: solid black 3px;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 96px;
+    left: 10px;
+    z-index: 2;
+}
+
+.left-eyeball {
+	background-color: var(--homer-black);
+    border: solid black 3px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 42%;
+    left: 36%;
+    z-index: 2;
+
+    animation-name: left_eye_move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.right-eye {
+	background-color: var(--homer-white);
+    border: solid black 3px;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 96px;
+    left: 75px;
+    z-index: 2;
+}
+
+.right-eyeball {
+	background-color: var(--homer-black);
+    border: solid black 3px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 42%;
+    left: 45%;
+    z-index: 2;
+
+    animation-name: right_eye_move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.nose {
+	background-color: var(--homer-yellow);
+    border: solid black 3px;
+    width: 30px;
+    height: 22px;
+    border-radius: 46%;
+
+    position: absolute;
+    top: 133px;
+    left: 53px;
+    z-index: 3;
+}
+
+.left-ear {
+    background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-right: none;
+    border-bottom-color: var(--homer-yellow);
+    width: 17px;
+    height: 10px;
+    border-radius: 11px 18px 3px 3px;
+
+    position: absolute;
+    top: 145px;
+    left: 1px;
+    z-index: 2;
+}
+
+.left-ear-inner-1 {
+    background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-left: none;
+    border-bottom: none;
+    width: 5px;
+    height: 7px;
+    border-radius: 2px 6px 0 0;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 3;
+}
+
+.left-ear-inner-2 {
+    background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-right: none;
+    border-bottom: none;
+    width: 3px;
+    height: 4px;
+    border-radius: 5px 0 0 0;
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    z-index: 3;
+}
+
+.left-ear-pixel {
+    background-color: var(--homer-black);
+    border: none;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 10px;
+    left: -3px;
+    z-index: 3;
+}
+
+.right-ear {
+	background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-left: none;
+    border-bottom-color: var(--homer-yellow);
+    width: 17px;
+    height: 10px;
+    border-radius: 18px 11px 3px 3px;
+
+    position: absolute;
+    top: 145px;
+    left: 122px;
+    z-index: 2;
+}
+
+.right-ear-inner-1 {
+    background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-right: none;
+    border-bottom: none;
+    width: 5px;
+    height: 7px;
+    border-radius: 6px 2px 0 0;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    z-index: 3;
+}
+
+.right-ear-inner-2 {
+    background-color: var(--homer-yellow);
+    border: solid black 3px;
+    border-left: none;
+    border-bottom: none;
+    width: 3px;
+    height: 4px;
+    border-radius: 0 5px 0 0;
+    position: absolute;
+    top: 6px;
+    left: 9px;
+    z-index: 3;
+}
+
+.right-ear-pixel {
+    background-color: var(--homer-black);
+    border: none;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 10px;
+    left: 17px;
+    z-index: 3;
+}
+
+@keyframes left_eye_move{
+	0% {left: 36%;}
+	20% {left: 36%;}
+	21% {left: 10%;}
+	40% {left: 10%;}
+	42% {left: 64%;}
+	62% {left: 64%;}
+	63% {left: 36%;}
+}
+
+@keyframes right_eye_move{
+	0% {left: 45%;}
+	20% {left: 45%;}
+	21% {left: 17%;}
+	40% {left: 17%;}
+	42% {left: 71%;}
+	62% {left: 71%;}
+	63% {left: 45%;}
+}
+
+/******************* HOMER PIC - END *******************/
