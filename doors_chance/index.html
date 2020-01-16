@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doors Chance</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+	<p>	Перед тобой три двери, за одной из них приз. Ты выбираешь одну из трех дверей. Затем ведущий открывает одну из двух оставшихся, которая всегда оказывается пустой.
+		Надо ли игроку менять выбранный вариант, чтобы повысить шанс выигрыша?
+	</p>
+
+	<form>
+		<label for="count">Попыток:</label>
+		<input type="number" name="count" id="count" placeholder="Целое число">
+		<br>
+		<label for="doorsNum">Дверей:</label>
+		<select name="doors" id="doorsNum">
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>		
+		</select>
+		<br>
+		<button type="button" onclick="generate(+count.value, +doorsNum.value)">GENERATE</button>
+	</form>
+
+	<div class="desc"><strong>1 - </strong> первая попытка игрока</div>
+	<div class="desc"><strong>X - </strong> пустая дверь, открытая ведущим</div>
+	<div class="desc"><strong>2 - </strong> вторая попытка игрока (перемена мнения)</div>
+	
+
+	<div id="result"></div>
+
+	<div id="output"></div>
+
+<script src="script/script.js"></script>
+
+</body>
+</html>

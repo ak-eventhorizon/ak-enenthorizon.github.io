@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+	margin: 10px;
+	width: 280px;
+	text-align: justify;
+}
+
+form{
+	margin: 10px;
+}
+
+button{
+	margin-top: 5px;
+	height: 25px;
+    width: 173px;
+    font-weight: 600;
+}
+
+strong {
+	font-size: 1.3em;
+}
+
+label {
+	display: inline-block;
+	width: 65px;
+    height: 1.4em;
+}
+
+#count {
+	width: 99px;
+}
+
+#doorsNum {
+	width: 103px;
+}
+
+.desc {
+	margin: 0px 10px;
+}
+
+#result {
+	margin: 10px;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+#output {
+	margin: 10px;
+}
+
+.doors {
+	display: flex;
+	width: 280px;
+}
+
+.door {
+	display: inline-block;
+	width: 45px;
+	height: 90px;
+	border: 1px solid black;
+	margin: 3px;
+	
+	text-align: center;
+	line-height: 90px;
+	font-size: 2em;
+}
+
+.prize {
+	background-color: gold;
+}
