@@ -31,10 +31,12 @@ label {
 }
 
 #count {
+	margin-left: 10px;
 	width: 90px;
 }
 
 #doorsNum {
+	margin-left: 10px;
 	width: 95px;
 }
 
