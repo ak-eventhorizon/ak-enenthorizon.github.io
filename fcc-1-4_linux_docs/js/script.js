@@ -3,21 +3,26 @@
 
 // ******************** Add console-like banner ********************
 let consoleBlock = document.getElementById('console');
+let animationInProgress = false; // for multiple click restriction
 
 
 function printConsole(string) {
 
-    consoleBlock.innerHTML = '$' + string;
-    consoleBlock.style.width = '1ch'; // set inline width = 1 character ($)
-    consoleBlock.style.animation = 'none'; //disable CSS cursor animation
+    if (!animationInProgress) {
+        animationInProgress = true;
+        consoleBlock.innerHTML = '$' + string;
+        consoleBlock.style.width = '1ch'; // set inline width = 1 character ($)
+        consoleBlock.style.animation = 'none'; //disable CSS cursor animation
 
-    for (let i = 1; i <= string.length; i++) {
-        setTimeout(printOneCharacter, i * 100);
+        for (let i = 1; i <= string.length; i++) {
+            setTimeout(printOneCharacter, i * 100);
+        }
+
+        setTimeout(function () {
+            consoleBlock.style.animation = ''; //enable CSS cursor animation 
+            animationInProgress = false;
+        }, string.length * 100);
     }
-
-    setTimeout(function () {
-        consoleBlock.style.animation = ''; //enable CSS cursor animation 
-    }, string.length * 100);
 }
 
 
