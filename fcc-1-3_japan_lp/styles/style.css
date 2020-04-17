@@ -30,6 +30,7 @@
     --shadow-grey-trnsp: #97979720;
 
     --content-min-width: 320px;
+    --content-max-width: 1200px;
 }
 /******************* COLOR SCHEME / VARS - END *******************/
 
@@ -38,20 +39,35 @@
 }
 
 body {
+    min-width: var(--content-min-width);
     padding-top: 110px;
 }
 
 .container {
     width: 100%;
     min-width: var(--content-min-width);
+    max-width: var(--content-max-width);
     box-sizing: border-box;
     margin: auto;
+}
+
+/*следующие два правила -  для нейтразиции смещения на высоту
+фиксированного меню при переходе по ссылке из него*/
+.anchor {
+    height: 110px;
+    background-color: transparent;
+    position: relative;
+    top: -110px;
+    z-index: -1;
+}
+
+#main .container {
+    margin-top: -110px;
 }
 
 /******************* HEADER / NAV - BEGIN *******************/
 #header {
     width: 100%;
-    min-width: var(--content-min-width);
     
     box-shadow: 0px 2px 5px 0px var(--shadow-grey);
 
@@ -78,8 +94,8 @@ body {
     height: 110px;
 
     background: url(../img/leaves.png) 0px 0px;
-
-    animation: failingLeaves 20s linear infinite;
+    animation: failingLeaves 20s linear;
+    animation-iteration-count: infinite;
 }
 
 #header-img {
@@ -139,7 +155,6 @@ body {
 
 #main {
     width: 100%;
-    min-width: var(--content-min-width);
 }
 
 #main #swords {
@@ -266,7 +281,7 @@ body {
     color: var(--japan-red);
     font-family: 'Times New Roman', Times, serif;
 
-    font-size: 3rem;
+    font-size: 2.4rem;
 }
 
 #contact button {
@@ -287,11 +302,9 @@ body {
 /******************* FOOTER - BEGIN *******************/
 
 #footer {
-
     display: none;
 
     width: 100%;
-    min-width: var(--content-min-width);
     background-color: var(--pure-white);
 
     box-shadow: 0px -2px 5px 0px var(--shadow-grey);
@@ -303,19 +316,66 @@ body {
 /******************* FOOTER - END *******************/
 
 /****************************** @MEDIA - START ******************************/
-/* Large devices (laptops/desktops, 769px-->>> and up) */
-@media only screen and (min-width: 769px) {
-
-    #header > .container {
-        justify-content: center;
-    }
-}
-
-/* Medium devices (landscape tablets, 601px-->>> and up) */
+/* Medium devices (landscape tablets, 601px-->>> and up to <<<--768px) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
 
     #header > .container {
         justify-content: center;
+    }
+
+    #nav-bar ul {
+        display: block;
+    }
+
+    #nav-bar li {
+        margin-left: 20px;
+    }
+
+    #nav-bar a {
+        font-size: 2.1rem;
+    }
+
+    #swords .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        grid-gap: 3vmax;
+        padding: 3vmax;
+    }
+
+    #swords .container .item img {
+        margin: 2vmax;
+        min-width: 30%;
+    }
+
+    #swords .container .item h2 {
+        font-size: 4.5rem;
+    }
+
+    #swords .container .item p {
+        font-size: 1.5rem;
+    }
+
+    #video .container {
+        padding: 3vmax;
+    }
+
+    #video h2 {
+        font-size: 3.1rem;
+        margin: 0 3vmax 3vmax;
+    }
+
+    #video iframe {
+        width: 100%;
+        height: 35vmax;
+    }
+
+    #contact p {
+        display: none;
+    }
+
+    #contact input {
+        width: 90%;
     }
 }
 
@@ -324,6 +384,14 @@ body {
 
     body {
         padding-top: 0;
+    }
+
+    .anchor {
+        display: none;
+    }
+    
+    #main .container {
+        margin-top: 0;
     }
 
     #header {
@@ -342,7 +410,8 @@ body {
         height: 20vmax;
         background-size: contain;
 
-        animation: failingLeaves-mobile 20s linear infinite;
+        animation: failingLeaves-mobile 20s linear;
+        animation-iteration-count: infinite;
     }
 
     #swords .container {
@@ -359,7 +428,7 @@ body {
     }
 
     #swords .container .item h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     #swords .container .item p {
