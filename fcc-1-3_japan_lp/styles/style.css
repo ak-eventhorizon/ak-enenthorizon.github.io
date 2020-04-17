@@ -29,7 +29,7 @@
     --shadow-grey: #979797;
     --shadow-grey-trnsp: #97979720;
 
-    --content-width: 1000px;
+    --content-min-width: 320px;
 }
 /******************* COLOR SCHEME / VARS - END *******************/
 
@@ -42,14 +42,16 @@ body {
 }
 
 .container {
-    width: var(--content-width);
+    width: 100%;
+    min-width: var(--content-min-width);
     box-sizing: border-box;
     margin: auto;
 }
 
 /******************* HEADER / NAV - BEGIN *******************/
 #header {
-    min-width: var(--content-width);
+    width: 100%;
+    min-width: var(--content-min-width);
     
     box-shadow: 0px 2px 5px 0px var(--shadow-grey);
 
@@ -61,7 +63,6 @@ body {
 
     position: fixed;
     top: 0;
-    width: 100%;
 }
 
 #header > .container {
@@ -77,6 +78,7 @@ body {
     height: 110px;
 
     background: url(../img/leaves.png) 0px 0px;
+
     animation: failingLeaves 20s linear infinite;
 }
 
@@ -126,7 +128,7 @@ body {
     }
 
     100% {
-        background: url(../img/leaves.png) 0px 40vh;
+        background: url(../img/leaves.png) 0px 20vmax;
         background-size: contain;
     }
 }
@@ -136,7 +138,8 @@ body {
 /******************* MAIN - BEGIN *******************/
 
 #main {
-    min-width: var(--content-width);
+    width: 100%;
+    min-width: var(--content-min-width);
 }
 
 #main #swords {
@@ -158,6 +161,7 @@ body {
 
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 #swords .container .item img {
@@ -286,7 +290,8 @@ body {
 
     display: none;
 
-    min-width: var(--content-width);
+    width: 100%;
+    min-width: var(--content-min-width);
     background-color: var(--pure-white);
 
     box-shadow: 0px -2px 5px 0px var(--shadow-grey);
@@ -297,31 +302,25 @@ body {
 }
 /******************* FOOTER - END *******************/
 
-
-@media only screen and (min-device-width: 1080px) and (max-device-width: 1200px) {
+/****************************** @MEDIA - START ******************************/
+/* Large devices (laptops/desktops, 769px-->>> and up) */
+@media only screen and (min-width: 769px) {
 
     #header > .container {
         justify-content: center;
     }
 }
 
-@media only screen and (min-device-width: 769px) and (max-device-width: 1079px) {
+/* Medium devices (landscape tablets, 601px-->>> and up) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
 
     #header > .container {
         justify-content: center;
     }
-   
-    #nav-bar li:first-of-type {
-        margin-left: 0;
-    }
-
-    #nav-bar li {
-        margin-left: 20px;
-    }
 }
 
-/* ----------- Smartphones and Tablets----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+/* Extra small devices (phones, <<<--600px and down) */
+@media only screen and (max-width: 600px) {
 
     body {
         padding-top: 0;
@@ -332,7 +331,7 @@ body {
     }
 
     #header > .container {
-        height: 40vh;
+        height: 20vmax;
     }
 
     #nav-bar {
@@ -340,7 +339,7 @@ body {
     }
 
     #header .animation-layer {
-        height: 40vh;
+        height: 20vmax;
         background-size: contain;
 
         animation: failingLeaves-mobile 20s linear infinite;
@@ -350,39 +349,44 @@ body {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: 1fr;
-        grid-gap: 50px;
-        padding: 80px;
-    }
-
-    #swords .container .item .discription {
-        align-self: flex-start;
+        grid-gap: 3vmax;
+        padding: 3vmax;
     }
 
     #swords .container .item img {
+        margin: 2vmax;
         min-width: 30%;
-        height: auto;
     }
 
     #swords .container .item h2 {
-        font-size: 8rem;
+        font-size: 2rem;
     }
 
     #swords .container .item p {
-        font-size: 2.7rem;
+        font-size: 1rem;
+    }
+
+    #video .container {
+        padding: 3vmax;
     }
 
     #video h2 {
-        font-size: 6rem;
+        font-size: 2rem;
+        margin: 0 3vmax 3vmax;
     }
 
     #video iframe {
-        width: 900px;
-        height: 671px;
+        width: 100%;
+        height: 35vmax;
+    }
+
+    #contact .container {
+        padding: 3vmax;
     }
 
     #contact input {
-        font-size: 5.5rem;
-        width: 100%;
+        font-size: 1.5rem;
+        width: 90%;
     }
 
     #contact p {
@@ -390,8 +394,10 @@ body {
     }
 
     #contact button {
-        font-size: 7rem;
+        font-size: 2rem;
         width: 50%;
-        border-radius: 4rem;
+        border-radius: 2rem;
+        margin-top: 3vmax;
     }
 }
+/****************************** @MEDIA - END ******************************/
