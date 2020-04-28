@@ -1,34 +1,135 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+	<title>Event Horizon</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Event Horizon</title>
-	
-	<link rel="stylesheet" href="styles.css">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
 
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
 <body>
 
-	<div class="main">
-		<a href="https://ak-eventhorizon.github.io/solar_system" target="_blank"><p>Solar System</p></a>
-		<a href="https://ak-eventhorizon.github.io/space_war" target="_blank"><p>Space War</p></a>
-		<a href="https://ak-eventhorizon.github.io/bee" target="_blank"><p>Bee</p></a>
-		<a href="https://ak-eventhorizon.github.io/snake" target="_blank"><p>Snake</p></a>
-		<a href="https://ak-eventhorizon.github.io/password_generator" target="_blank"><p>Password Generator</p></a>
-		<a href="https://ak-eventhorizon.github.io/graph_drawing" target="_blank"><p>Graph Drawer</p></a>
-		<a href="https://ak-eventhorizon.github.io/doors_chance" target="_blank"><p>Doors Chance</p></a>
-		<a href="https://ak-eventhorizon.github.io/fcc-1-1_homer_tribute" target="_blank"><p>Homer Simpson</p></a>
-		<a href="https://ak-eventhorizon.github.io/fcc-1-2_star_wars_form" target="_blank"><p>Star Wars</p></a>
-		<a href="https://ak-eventhorizon.github.io/fcc-1-3_japan_lp" target="_blank"><p>Japan Swords</p></a>
-		<a href="https://ak-eventhorizon.github.io/fcc-1-4_linux_docs" target="_blank"><p>Linux</p></a>
-		<a href="#"><p>-- Reserved --</p></a>
+	<div id="backgroung">
+		<canvas id="bg-stars-layer"></canvas>
+		<canvas id="bg-blackhole-layer"></canvas>
 	</div>
 
-</body>
+	<div id="container">
 
+		<header>
+			<nav id="navbar">
+				<ul>
+					<li>
+						<a href="#anchor-welcome">About</a>
+					</li>
+					<li>
+						<a href="#anchor-projects">Projects</a>
+					</li>
+					<li>
+						<a href="#anchor-profile">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		
+		<main>
+			<div class="anchor" id="anchor-welcome"></div>
+			<section id="welcome-section">
+					<h1>Event<br>    Horizon</h1>
+			</section>
+
+			<div class="anchor" id="anchor-projects"></div>
+			<section id="projects">
+				<a href="https://ak-eventhorizon.github.io/projects/solar_system" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/solar-system.png" alt="solar system">
+					<p>Solar System</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/space_war" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/space-war.png" alt="space war">
+					<p>Space War</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/snake" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/snake.png" alt="snake game">
+					<p>Snake Game</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/bee" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/bees.png" alt="the bees">
+					<p>The Bees</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/password_generator" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/password.png" alt="password generator">
+					<p>Password Generator</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/graph_drawing" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/graph.png" alt="graph drawer">
+					<p>Graph Drawer</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/doors_chance" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/doors.png" alt="doors chance">
+					<p>Doors Chance</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/fcc-1-1_homer_tribute" 
+				target="_blank" class="project-tile">
+						<img src="./img/preview/homer-tribute.png" alt="homer preview">
+						<p>Homer Trubute Page</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/fcc-1-2_star_wars_form" 
+				target="_blank" class="project-tile">
+						<img src="./img/preview/sw-survey-form.png" alt="star wars preview">
+						<p>Star wars form</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/fcc-1-3_japan_lp" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/japan-landing.png" alt="japan sword preview">
+					<p>Japan Swords Landing</p>
+				</a>
+
+				<a href="https://ak-eventhorizon.github.io/projects/fcc-1-4_linux_docs" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/tech-page.png" alt="linux tech page preview">
+					<p>Linux tech page</p>
+				</a>
+
+				<a href="#" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/4x3-placeholder.png" alt="placeholder">
+					<p>-- Reserved --</p>
+				</a>
+
+				<a href="#" 
+				target="_blank" class="project-tile">
+					<img src="./img/preview/4x3-placeholder.png" alt="placeholder">
+					<p>-- Reserved --</p>
+				</a>
+			</section>
+
+			<div class="anchor" id="anchor-profile"></div>
+			<section id="profile">
+				<a id="profile-link" href="https://github.com/ak-eventhorizon" target="_blank"></a>
+			</section>
+
+		</main>
+	</div>
+
+<script src="./js/script.js"></script>
+
+</body>
 </html>
