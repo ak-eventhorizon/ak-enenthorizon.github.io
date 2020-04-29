@@ -154,7 +154,9 @@ main {
     border: 5px solid var(--pure-white);
 	border-radius: 3vh;
 	text-decoration: none;
+
 	overflow: hidden;
+	-webkit-mask-image: -webkit-radial-gradient(white, black); /*Safari overflow:hidden fix*/
 }
 
 .project-tile img {
