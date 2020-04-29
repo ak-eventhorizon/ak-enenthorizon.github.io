@@ -25,8 +25,8 @@ function randomElementFrom(array) {
 
 let canvas = document.getElementById('bg-stars-layer');
 let ctx = canvas.getContext('2d');
-ctx.canvas.width  = window.innerWidth; // set canvas width as viewport width
-ctx.canvas.height = window.innerHeight; // set canvas height as viewport height
+ctx.canvas.width  = window.outerWidth; // set canvas width as viewport width
+ctx.canvas.height = window.outerHeight; // set canvas height as viewport height
 
 let canvas2 = document.getElementById('bg-blackhole-layer');
 let ctx2 = canvas2.getContext('2d');
@@ -117,8 +117,8 @@ function generateBlackHole() {
 
 // refresh width/height & clear canvases
 function refreshCanvas() {
-    ctx.canvas.width  = window.innerWidth; 
-    ctx.canvas.height = window.innerHeight;
+    ctx.canvas.width  = window.outerWidth; 
+    ctx.canvas.height = window.outerHeight;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx2.canvas.width  = canvas2.clientWidth;
@@ -152,3 +152,4 @@ function createBackground(){
 
 window.addEventListener('load', createBackground);
 window.addEventListener('resize', createBackground);
+// window.addEventListener('orientationchange', createBackground);
