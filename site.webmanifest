@@ -1,8 +1,7 @@
 {
     "name":"Event Horizon",
     "short_name":"EH",
-    "icons":[
-        {
+    "icons":[{
         "src":"./img/icons/android-chrome-192x192.png",
         "sizes":"192x192",
         "type":"image/png"
