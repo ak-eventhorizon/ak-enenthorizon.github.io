@@ -59,7 +59,7 @@ main > section {
 #bg-stars-layer {
 	background-color: var(--pure-black);
 	width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
 	left: 0;
