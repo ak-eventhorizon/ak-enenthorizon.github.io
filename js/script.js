@@ -154,9 +154,15 @@ window.addEventListener('load', createBackground);
 // window.addEventListener('resize', createBackground); 
 //disables because mobile Safari dinamic height
 
+
+
+
 let ih = window.innerHeight;
 let oh = window.outerHeight;
 let ch = canvas.clientHeight;
 let sh = screen.height;
 
-alert(`innerHeight - ${ih}\nouterHeight - ${oh}\nclientHeight - ${ch}\nscreenHeight - ${sh}`);
+let container = document.getElementById('container');
+container.style.color = 'white';
+container.style.fontSize = '3rem';
+container.innerText = `innerHeight - ${ih}\nouterHeight - ${oh}\nclientHeight - ${ch}\nscreenHeight - ${sh}`;
