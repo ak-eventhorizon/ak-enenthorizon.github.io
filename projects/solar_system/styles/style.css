@@ -1,32 +1,221 @@
+@font-face {
+    font-family: 'Trashford';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/trashfort.ttf') format('truetype');
+}
+
+
+/****************************** COLOR SCHEME - BEGIN ******************************/
+:root {
+	--pure-black: #000000;
+	--pure-white: #ffffff; 
+	--trn-white: #ffffff55;
+	--cosmic-grey: #939393;
+}
+/****************************** COLOR SCHEME - END ******************************/
+
+
 * {
     margin: 0;
-    padding: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-	/* звездное небо фоном */
-	background: #1e1e1f;
-	
-	background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 5px),
-    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 5px),
-    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 5px),
-	radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 2px);
-	
-	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-	background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+	background-color: var(--pure-black);
 }
 
-#images {
-	display: none;
-}
-
-#timer {
+#stars_bg {
 	position: absolute;
-	top: 40px;
-	left: 40px;
-	width: 200px;
-	color: white;
-	font-size: 36px;
+	top: 0;
+	left: 0;
+	background-color: var(--pure-black);
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+#app {
+	display: grid;
+	grid-template-areas: 'info main controls';
+	grid-template-columns: 1fr 100vmin 1fr;
+}
+
+#info {
+	grid-area: info;
+
+	color: var(--cosmic-grey);
 	font-weight: bold;
-	font-family: sans-serif;
+	font-family: Trashford, sans-serif;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+#info[class*="transparent"]{
+	color: transparent;
+}
+
+#info h2 {
+	margin: 1rem;
+	font-size: 4rem;
+}
+
+#info #years_table {
+	display: grid;
+	grid-gap: 5px 0;
+	grid-template-columns: 1fr 1fr;
+}
+
+#years_table div {
+	overflow: hidden;
+}
+
+#info .planet {
+	text-align: right;
+}
+
+#main {
+	grid-area: main;
+}
+
+#solar_system {
+	width: 100vmin;
+	height: 100vmin;
+}
+
+#controls {
+	grid-area: controls;
+}
+
+#controls #buttons {
+	display: grid;
+    grid-template-areas:
+        'minus pause plus'
+        '. info orbit';
+	grid-template-columns: repeat(3,fit-content(100%));
+	grid-gap: 5px 5px;
+	
+    margin: 2rem;
+	justify-content: center;
+}
+
+#buttons .button {
+	background-color: var(--trn-white);
+	width: 40px;
+	height: 40px;
+	border-radius: 20%;
+	margin: auto;
+}
+
+#buttons .button:hover {
+	cursor: pointer;
+}
+
+#buttons #speed_plus {
+	grid-area: plus;
+
+	background-image: url(../icons/plus.svg);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#buttons #speed_pause {
+	grid-area: pause;
+
+	background-image: url(../icons/pause.svg);
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#buttons #speed_pause[class*="paused"] {
+	background-image: url(../icons/play.svg);
+}
+
+#buttons #speed_minus {
+	grid-area: minus;
+
+	background-image: url(../icons/minus.svg);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#buttons #disable_orbits {
+	grid-area: orbit;
+
+	background-image: url(../icons/orbit_dsbl.svg);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#buttons #disable_orbits[class*="disabled"] {
+	background-image: url(../icons/orbit_enbl.svg);
+}
+
+#buttons #info_toggle {
+	grid-area: info;
+
+	background-image: url(../icons/info_dsbl.svg);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#buttons #info_toggle[class*="disabled"] {
+	background-image: url(../icons/info_enbl.svg);
+}
+
+
+
+
+
+
+@media screen and (orientation:portrait) {
+	#app {
+		grid-template-areas: 
+		'main'
+		'info'
+		'controls';
+
+		grid-template-columns: 100vmin;
+		grid-template-rows: 100vmin 1fr auto;
+
+		min-height: 100vh;
+	}
+
+	#info {
+		background-image: none;
+		font-size: 3.5rem;
+
+		display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+	}
+
+	#info h2 {
+		font-size: 8rem;
+	}
+
+	#info #years_table {
+		grid-template-columns: 3fr 2fr 3fr 2fr;
+	}
+
+	#controls {
+		background-image: none;
+	}
+
+	#controls #buttons {
+		grid-template-areas: 'info orbit . minus pause plus';
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	#buttons .button {
+		min-width: 140px;
+		min-height: 140px;
+	}
 }
