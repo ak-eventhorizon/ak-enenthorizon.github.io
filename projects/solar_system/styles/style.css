@@ -1,10 +1,9 @@
 @font-face {
-    font-family: 'Sketchy';
+    font-family: 'Catwalzhari';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/Sketchy.ttf') format('truetype');
+    src: url('../fonts/Catwalzhari.ttf') format('truetype');
 }
-
 
 /****************************** COLOR SCHEME - BEGIN ******************************/
 :root {
@@ -47,8 +46,8 @@ body {
 
 	color: var(--cosmic-grey);
 	font-weight: bold;
-	font-family: Sketchy, sans-serif;
-	font-size: 1.8rem;
+	font-family: Catwalzhari, sans-serif;
+	font-size: 2rem;
 	text-align: center;
 }
 
@@ -57,7 +56,7 @@ body {
 }
 
 #info h2 {
-	margin: 1rem;
+	margin: 2rem 0;
 	font-size: 4rem;
 }
 
@@ -96,7 +95,7 @@ body {
     grid-template-columns: repeat(3,fit-content(100%));
 	grid-gap: 20px 20px;
 	
-    margin: 2rem;
+    margin: 2rem 0;
     justify-content: center;
 }
 
@@ -187,11 +186,7 @@ body {
 
 	#info {
 		background-image: none;
-		font-size: 3rem;
-
-		display: flex;
-    	flex-direction: column;
-    	justify-content: center;
+		font-size: 4rem;
 	}
 
 	#info h2 {
@@ -200,6 +195,10 @@ body {
 
 	#info #years_table {
 		grid-template-columns: 3fr 2fr 3fr 2fr;
+	}
+
+	#info .planet {
+		text-align: center;
 	}
 
 	#controls {
