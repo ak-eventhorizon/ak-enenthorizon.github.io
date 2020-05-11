@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Trashford';
+    font-family: 'Sketchy';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/trashfort.ttf') format('truetype');
+    src: url('../fonts/Sketchy.ttf') format('truetype');
 }
 
 
@@ -47,7 +47,7 @@ body {
 
 	color: var(--cosmic-grey);
 	font-weight: bold;
-	font-family: Trashford, sans-serif;
+	font-family: Sketchy, sans-serif;
 	font-size: 1.8rem;
 	text-align: center;
 }
@@ -91,13 +91,13 @@ body {
 #controls #buttons {
 	display: grid;
     grid-template-areas:
-        'minus pause plus'
-        '. info orbit';
-	grid-template-columns: repeat(3,fit-content(100%));
-	grid-gap: 5px 5px;
+        'info orbit .'
+        'minus pause plus';
+    grid-template-columns: repeat(3,fit-content(100%));
+	grid-gap: 20px 20px;
 	
     margin: 2rem;
-	justify-content: center;
+    justify-content: center;
 }
 
 #buttons .button {
@@ -183,13 +183,11 @@ body {
 
 		grid-template-columns: 100vmin;
 		grid-template-rows: 100vmin 1fr auto;
-
-		min-height: 100vh;
 	}
 
 	#info {
 		background-image: none;
-		font-size: 3.5rem;
+		font-size: 3rem;
 
 		display: flex;
     	flex-direction: column;
@@ -215,7 +213,7 @@ body {
 	}
 
 	#buttons .button {
-		min-width: 140px;
-		min-height: 140px;
+		min-width: 120px;
+		min-height: 120px;
 	}
 }

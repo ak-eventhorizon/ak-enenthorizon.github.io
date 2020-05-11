@@ -218,6 +218,7 @@ let yearCount = function(num){
 //переключение видимости орбит - true/false
 let toggleOrbitVisibility = function(){
 	visibleOrbits = !visibleOrbits;
+	setAngleAndRedraw(i); //отрисовать кадр независимо от паузы
 };
 
 //увеличение скорости вращения
@@ -245,16 +246,17 @@ let rotateSpeedTogglePause = function(){
 
 //рекурсивный цикл увеличения градусов поворота
 // ПОТЕНЦИАЛЬНАЯ ПРОБЛЕМА - i увеличивается бесконечно
+// i вынесена из функции, чтобы использоваться внутри toggleOrbitVisibility()
 
+let i = 0;
 let rotate = function(){
-	let i = 0;
 
 	function f(){
 
 		//проверка стоит ли пауза
 		if(!rotatePaused){
-			setAngleAndRedraw(i);
 			i++;
+			setAngleAndRedraw(i);
 			yearCount(i);
 		}
 
