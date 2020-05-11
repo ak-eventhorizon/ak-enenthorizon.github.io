@@ -146,7 +146,7 @@ let drawPlanet = function(obj, angle = 0){
 };
 
 //функция по отрисовке орбиты
-let drawOrbit = function(obj, lineWidth = 0.3, color = 'white'){
+let drawOrbit = function(obj, lineWidth = 0.3, color = '#ffffffcc'){
 	context.save();
 	context.lineWidth = lineWidth;
 
