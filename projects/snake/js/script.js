@@ -1,3 +1,5 @@
+'use strict';
+
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 let height = canvas.height;
@@ -190,8 +192,8 @@ Snake.prototype.checkCollision = function(head){
 	for (let i = 0; i < this.segments.length; i++){
 		if(head.equal(this.segments[i])){
 			selfCollision = true;
-		};
-	};
+		}
+	}
 
 	return wallCollision || selfCollision;
 };
@@ -237,8 +239,8 @@ Apple.prototype.move = function(){
 	for (let i = 0; i < snake.segments.length; i++){
 		if (this.position.equal(snake.segments[i])){
 			this.move();
-		};
-	};
+		}
+	}
 
 };
 
@@ -269,8 +271,8 @@ document.addEventListener('keydown', function(event){
 			if (newDirection !== undefined){
 			snake.setDirection(newDirection);
 			}
-		};
-	};	
+		}
+	}	
 });
 
 
