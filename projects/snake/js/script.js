@@ -256,15 +256,23 @@ let directions = {
 	40: 'down'
 };
 
-//обработчик события keydown
+//обработчик событий keydown (на клавиатуре)
 document.addEventListener('keydown', function(event){
 	if(!gameOvered){
 		if (directions[event.keyCode] === 'space' && !paused){
+
 			paused = true;
 			stopAnimation();
+
+			btnPause.classList.toggle('paused');
+
 		} else if (directions[event.keyCode] === 'space'){
+
 			paused = false;
 			startAnimation();
+
+			btnPause.classList.toggle('paused');
+
 		} else if (directions[event.keyCode] !== 'space'){
 			let newDirection = directions[event.keyCode];
 
@@ -274,6 +282,42 @@ document.addEventListener('keydown', function(event){
 		}
 	}	
 });
+
+//обработчики нажатия кнопок управления на экране
+let btnUp = document.getElementById('btn_up');
+let btnLeft = document.getElementById('btn_left');
+let btnPause = document.getElementById('btn_pause');
+let btnRight = document.getElementById('btn_right');
+let btnDown = document.getElementById('btn_down');
+
+btnUp.onclick = function(){
+	snake.setDirection('up');
+};
+
+btnLeft.onclick = function(){
+	snake.setDirection('left');
+};
+
+btnPause.onclick = function(){
+
+	this.classList.toggle('paused');
+
+	if (!paused){
+		paused = true;
+		stopAnimation();
+	} else {
+		paused = false;
+		startAnimation();
+	} 
+};
+
+btnRight.onclick = function(){
+	snake.setDirection('right');
+};
+
+btnDown.onclick = function(){
+	snake.setDirection('down');	
+};
 
 
 
@@ -302,8 +346,6 @@ let startAnimation = function(){
 let stopAnimation = function(){
 	clearInterval(intervalId);
 };
-
-
 
 
 
