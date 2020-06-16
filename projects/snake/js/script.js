@@ -300,15 +300,17 @@ btnLeft.onclick = function(){
 
 btnPause.onclick = function(){
 
-	this.classList.toggle('paused');
+	if(!gameOvered){
+		this.classList.toggle('paused');
 
-	if (!paused){
-		paused = true;
-		stopAnimation();
-	} else {
-		paused = false;
-		startAnimation();
-	} 
+		if (!paused){
+			paused = true;
+			stopAnimation();
+		} else {
+			paused = false;
+			startAnimation();
+		} 
+	}
 };
 
 btnRight.onclick = function(){
