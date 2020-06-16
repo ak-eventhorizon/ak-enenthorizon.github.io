@@ -82,6 +82,26 @@ body {
 	background-image: url(../icons/arrow-down.svg);
 }
 
+#restart {
+    width: 32%;
+    height: 32%;
+
+    position: absolute;
+    bottom: 8%;
+    left: 34%;
+    z-index: 3;
+
+    background-size: 80%;
+	background-repeat: no-repeat;
+    background-position: center center;
+	background-image: url(../icons/retry.svg);
+    background-color: transparent;
+}
+
+#restart[class*="hidden"] {
+    display: none;
+}
+
 
 
 /*media query breakpoint - sensor screen*/

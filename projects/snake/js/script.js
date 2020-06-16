@@ -13,6 +13,9 @@ let score = 0; //счет игры
 let paused = false; //триггер для определения на паузе ли игра
 let gameOvered = false; //триггер для определения, что игра проиграна
 
+let snake; // переменная, для последующего создания в нее змейки
+let apple; // переменная, для последующего создания в нее яблока
+
 //рисование рамки игрового поля -- .fillRect(x,y,width,height)
 let drawBorder = function(){
 	ctx.fillStyle = 'gray';
@@ -36,11 +39,27 @@ let gameOver = function(){
 	gameOvered = true;
 	stopAnimation();
 
+	btnRestart.classList.toggle('hidden');
+
 	ctx.font = '60px Courier';
 	ctx.fillStyle = 'red';
 	ctx.textAlign = 'center'; //выравнивание по центру
 	ctx.textBaseline = 'middle'; //базовая линия текста посередине
 	ctx.fillText('GAME OVER', height / 2, width / 2);
+};
+
+//реализация запуска игры заново
+let newGame = function(){
+	score = 0;
+	paused = false;
+	gameOvered = false;
+
+	btnRestart.classList.toggle('hidden');
+
+	snake = new Snake();
+	apple = new Apple();
+
+	startAnimation();
 };
 
 
@@ -290,6 +309,8 @@ let btnPause = document.getElementById('btn_pause');
 let btnRight = document.getElementById('btn_right');
 let btnDown = document.getElementById('btn_down');
 
+let btnRestart = document.getElementById('restart');
+
 btnUp.onclick = function(){
 	snake.setDirection('up');
 };
@@ -321,10 +342,10 @@ btnDown.onclick = function(){
 	snake.setDirection('down');	
 };
 
+btnRestart.onclick = function(){
+	newGame();
+};
 
-
-let snake = new Snake();
-let apple = new Apple();
 
 let intervalId; 
 
@@ -351,4 +372,4 @@ let stopAnimation = function(){
 
 
 
-startAnimation();
+newGame();
