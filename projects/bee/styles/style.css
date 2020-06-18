@@ -9,4 +9,7 @@
 	background-repeat: no-repeat, no-repeat;
 	background-position: bottom right, 20px 0px;
 	background-size: 150px, 100px;
+
+	display: block;
+	margin: auto;
 }
